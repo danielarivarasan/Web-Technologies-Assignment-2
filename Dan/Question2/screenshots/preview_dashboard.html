@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 2 Student Dashboard Preview</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background: #f1f5f9; padding: 20px;">
+  <div class="container">
+    <header class="navbar">
+      <div class="nav-brand">
+        <h2>Student Management System</h2>
+        <span class="subtitle">Question 2 &bull; PHP PDO Prepared Statements & MySQL CRUD</span>
+      </div>
+      <div class="nav-actions">
+        <button class="btn btn-primary">+ Add New Student</button>
+      </div>
+    </header>
+
+    <div class="alert alert-success">
+      <span><strong>Success:</strong> Student 'Daniel Vance' (WT-2026-001) added successfully!</span>
+    </div>
+
+    <div class="filters-bar">
+      <input type="text" class="search-input" placeholder="Search by name, roll number, or email..." value="">
+      <select class="filter-select">
+        <option>All Courses</option>
+        <option selected>Computer Science & Engineering</option>
+      </select>
+      <button class="btn btn-secondary">Filter</button>
+    </div>
+
+    <main class="table-card">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Avatar</th>
+              <th>Roll Number</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Document</th>
+              <th>Created</th>
+              <th style="text-align: right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="avatar-placeholder" style="background: #dbeafe; color: #1e40af; border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; font-weight: bold;">D</div>
+              </td>
+              <td><strong>WT-2026-001</strong></td>
+              <td>Daniel Vance</td>
+              <td>daniel.vance@example.edu</td>
+              <td><span class="badge badge-blue">Computer Science & Engineering</span></td>
+              <td><span class="badge badge-green">📄 dan_resume.pdf (104.2 KB)</span></td>
+              <td><small class="subtitle">Oct 14, 2026</small></td>
+              <td style="text-align: right; white-space: nowrap;">
+                <span class="btn btn-secondary btn-sm">👁 View</span>
+                <span class="btn btn-secondary btn-sm">✏ Edit</span>
+                <span class="btn btn-danger btn-sm">🗑 Delete</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="avatar-placeholder" style="background: #fce7f3; color: #be185d; border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; font-weight: bold;">S</div>
+              </td>
+              <td><strong>WT-2026-002</strong></td>
+              <td>Sophia Chen</td>
+              <td>sophia.chen@example.edu</td>
+              <td><span class="badge badge-blue">Artificial Intelligence</span></td>
+              <td><span class="badge badge-green">📄 sophia_cert.pdf (98.5 KB)</span></td>
+              <td><small class="subtitle">Oct 14, 2026</small></td>
+              <td style="text-align: right; white-space: nowrap;">
+                <span class="btn btn-secondary btn-sm">👁 View</span>
+                <span class="btn btn-secondary btn-sm">✏ Edit</span>
+                <span class="btn btn-danger btn-sm">🗑 Delete</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

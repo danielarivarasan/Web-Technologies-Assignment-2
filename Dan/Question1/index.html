@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Portal | Question 1</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-container">
+    <header class="app-header">
+      <div class="badge">Web Technology Assignment II &bull; Question 1</div>
+      <h1>Student Registration Portal</h1>
+      <p class="subtitle">Complete the verified registration form below. All fields marked with an asterisk (<span class="required-star">*</span>) are mandatory.</p>
+    </header>
+
+    <main class="form-wrapper">
+      <form id="studentRegistrationForm" class="registration-form" novalidate>
+        
+        <!-- Row 1: Full Name & Roll Number -->
+        <div class="form-grid-2">
+          <div class="form-group" id="group-fullName">
+            <label for="fullName">Full Name <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                placeholder="e.g. Daniel Vance" 
+                autocomplete="name"
+                aria-describedby="fullNameError"
+                required
+              >
+              <span class="status-icon" aria-hidden="true"></span>
+            </div>
+            <small class="error-msg" id="fullNameError" role="alert"></small>
+            <small class="helper-text">Must be 3-50 letters and spaces only.</small>
+          </div>
+
+          <div class="form-group" id="group-rollNumber">
+            <label for="rollNumber">Roll Number <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input 
+                type="text" 
+                id="rollNumber" 
+                name="rollNumber" 
+                placeholder="e.g. WT-2026-001" 
+                autocomplete="off"
+                aria-describedby="rollNumberError"
+                required
+              >
+              <span class="status-icon" aria-hidden="true"></span>
+            </div>
+            <small class="error-msg" id="rollNumberError" role="alert"></small>
+            <small class="helper-text">Format: Prefix-Year-ID (e.g., WT-2026-001 or Dan-101).</small>
+          </div>
+        </div>
+
+        <!-- Row 2: Email & Course Selection -->
+        <div class="form-grid-2">
+          <div class="form-group" id="group-email">
+            <label for="email">Institutional Email <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="student@university.edu" 
+                autocomplete="email"
+                aria-describedby="emailError"
+                required
+              >
+              <span class="status-icon" aria-hidden="true"></span>
+            </div>
+            <small class="error-msg" id="emailError" role="alert"></small>
+            <small class="helper-text">Provide a valid email address.</small>
+          </div>
+
+          <div class="form-group" id="group-course">
+            <label for="course">Academic Program / Course <span class="required-star">*</span></label>
+            <div class="input-container">
+              <select id="course" name="course" aria-describedby="courseError" required>
+                <option value="">-- Choose your enrolled course --</option>
+                <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                <option value="Artificial Intelligence & Data Science">Artificial Intelligence & Data Science</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Software Engineering">Software Engineering</option>
+                <option value="Cybersecurity & Digital Forensics">Cybersecurity & Digital Forensics</option>
+              </select>
+              <span class="status-icon" aria-hidden="true"></span>
+            </div>
+            <small class="error-msg" id="courseError" role="alert"></small>
+            <small class="helper-text">Select your primary registered department.</small>
+          </div>
+        </div>
+
+        <!-- Row 3: File Upload -->
+        <div class="form-group" id="group-fileUpload">
+          <label for="fileUpload">Verification Document or Profile Picture <span class="required-star">*</span></label>
+          <div class="file-dropzone" id="fileDropzone">
+            <input 
+              type="file" 
+              id="fileUpload" 
+              name="fileUpload" 
+              accept=".jpg,.jpeg,.png,.pdf" 
+              aria-describedby="fileUploadError"
+              required
+            >
+            <div class="dropzone-content">
+              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <p class="dropzone-text"><strong>Click to browse</strong> or drag & drop file here</p>
+              <p class="dropzone-sub">Supported formats: JPG, PNG, PDF (Max size: 2MB)</p>
+            </div>
+            <div id="filePreview" class="file-preview-card" style="display: none;">
+              <span class="preview-name" id="fileNameDisplay"></span>
+              <span class="preview-size" id="fileSizeDisplay"></span>
+              <button type="button" id="removeFileBtn" class="remove-file-btn" aria-label="Remove chosen file">&times;</button>
+            </div>
+          </div>
+          <small class="error-msg" id="fileUploadError" role="alert"></small>
+        </div>
+
+        <!-- Row 4: Password & Confirm Password -->
+        <div class="form-grid-2">
+          <div class="form-group" id="group-password">
+            <label for="password">Password <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                placeholder="Minimum 8 characters" 
+                autocomplete="new-password"
+                aria-describedby="passwordError"
+                required
+              >
+              <button type="button" class="toggle-password" id="togglePasswordBtn" aria-label="Toggle password visibility">👁️</button>
+            </div>
+            <!-- Password Strength Indicator -->
+            <div class="strength-meter-container" id="strengthContainer">
+              <div class="strength-bar"><div id="strengthBarFill" class="strength-bar-fill"></div></div>
+              <span id="strengthText" class="strength-text">Password strength</span>
+            </div>
+            <small class="error-msg" id="passwordError" role="alert"></small>
+            <small class="helper-text">At least 8 chars with uppercase, lowercase, number and symbol.</small>
+          </div>
+
+          <div class="form-group" id="group-confirmPassword">
+            <label for="confirmPassword">Confirm Password <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input 
+                type="password" 
+                id="confirmPassword" 
+                name="confirmPassword" 
+                placeholder="Re-enter password" 
+                autocomplete="new-password"
+                aria-describedby="confirmPasswordError"
+                required
+              >
+              <button type="button" class="toggle-password" id="toggleConfirmPasswordBtn" aria-label="Toggle confirm password visibility">👁️</button>
+            </div>
+            <small class="error-msg" id="confirmPasswordError" role="alert"></small>
+            <small class="helper-text">Must match the password entered above.</small>
+          </div>
+        </div>
+
+        <!-- Terms Agreement -->
+        <div class="form-group checkbox-group" id="group-terms">
+          <label class="checkbox-label" for="terms">
+            <input type="checkbox" id="terms" name="terms" required>
+            <span>I acknowledge that the information provided is accurate and complies with academic guidelines. <span class="required-star">*</span></span>
+          </label>
+          <small class="error-msg" id="termsError" role="alert"></small>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="form-actions">
+          <button type="reset" id="resetBtn" class="btn btn-secondary">Reset Form</button>
+          <button type="submit" id="submitBtn" class="btn btn-primary">
+            <span>Register Student</span>
+            <span class="btn-spinner" style="display: none;"></span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Success Modal / Summary Card -->
+      <div id="successModal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+          <div class="modal-header">
+            <div class="success-icon">✓</div>
+            <h2>Registration Successful!</h2>
+            <p>The student profile has passed all client-side validation rules.</p>
+          </div>
+          <div class="modal-body" id="summaryDetails">
+            <!-- Dynamically populated via script.js -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="closeModalBtn" class="btn btn-primary">Done & Register Another</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2026 Web Technology Assignment II &bull; Student Project: Dan</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

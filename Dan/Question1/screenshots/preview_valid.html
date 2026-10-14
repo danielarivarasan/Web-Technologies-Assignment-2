@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 1 Validation Preview</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background: #f8fafc; padding: 20px;">
+  <div class="page-container">
+    <header class="app-header">
+      <div class="badge">Web Technology Assignment II &bull; Question 1</div>
+      <h1>Student Registration Portal</h1>
+      <p class="subtitle">Complete the verified registration form below. All fields marked with an asterisk (<span class="required-star">*</span>) are mandatory.</p>
+    </header>
+
+    <main class="form-wrapper">
+      <form class="registration-form" novalidate>
+        <div class="form-grid-2">
+          <div class="form-group is-valid">
+            <label for="fullName">Full Name <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input type="text" value="Daniel Arivarasan S J" readonly>
+              <span class="status-icon" style="display:inline-block; color: #10b981;">✔</span>
+            </div>
+            <small class="helper-text">Must be 3-50 letters and spaces only.</small>
+          </div>
+
+          <div class="form-group is-valid">
+            <label for="rollNumber">Roll Number <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input type="text" value="24CS036" readonly>
+              <span class="status-icon" style="display:inline-block; color: #10b981;">✔</span>
+            </div>
+            <small class="helper-text">Format: Prefix-Year-ID (e.g., WT-2026-001 or 24CS036).</small>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group is-valid">
+            <label for="email">Institutional Email <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input type="email" value="daniel.arivarasan@example.edu" readonly>
+              <span class="status-icon" style="display:inline-block; color: #10b981;">✔</span>
+            </div>
+            <small class="helper-text">Provide a valid email address.</small>
+          </div>
+
+          <div class="form-group is-valid">
+            <label for="course">Academic Program / Course <span class="required-star">*</span></label>
+            <div class="input-container">
+              <select disabled>
+                <option selected>Computer Science & Engineering</option>
+              </select>
+              <span class="status-icon" style="display:inline-block; color: #10b981;">✔</span>
+            </div>
+            <small class="helper-text">Select your primary registered department.</small>
+          </div>
+        </div>
+
+        <div class="form-group is-valid">
+          <label>Verification Document or Profile Picture <span class="required-star">*</span></label>
+          <div class="file-preview-card" style="display: flex;">
+            <span class="preview-name">daniel_academic_record.pdf</span>
+            <span class="preview-size">(104.2 KB)</span>
+            <span style="color: #10b981; font-weight: bold;">✔ Valid File</span>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group is-valid">
+            <label>Password <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input type="password" value="SuperSecure@2026" readonly>
+            </div>
+            <div class="strength-meter-container active" style="display: block;">
+              <div class="strength-bar"><div class="strength-bar-fill" style="width: 100%; background-color: #10b981;"></div></div>
+              <span class="strength-text" style="color: #10b981;">Strength: Strong</span>
+            </div>
+          </div>
+
+          <div class="form-group is-valid">
+            <label>Confirm Password <span class="required-star">*</span></label>
+            <div class="input-container">
+              <input type="password" value="SuperSecure@2026" readonly>
+              <span class="status-icon" style="display:inline-block; color: #10b981;">✔</span>
+            </div>
+            <small class="helper-text" style="color: #10b981; font-weight: 500;">Passwords match perfectly.</small>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary">Reset Form</button>
+          <button type="button" class="btn btn-primary">Register Student</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
