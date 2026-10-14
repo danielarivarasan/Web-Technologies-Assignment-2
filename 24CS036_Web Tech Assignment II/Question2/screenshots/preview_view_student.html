@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 2 Profile View Preview</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background: #f1f5f9; padding: 20px;">
+  <div class="container">
+    <header class="navbar">
+      <div class="nav-brand">
+        <h2>Student Profile Card</h2>
+        <span class="subtitle">Complete record overview &bull; Roll No: WT-2026-001</span>
+      </div>
+      <div class="nav-actions">
+        <span class="btn btn-secondary">&larr; Back to Student List</span>
+        <span class="btn btn-primary">✏ Edit Record</span>
+      </div>
+    </header>
+
+    <main class="profile-card">
+      <div class="profile-header">
+        <div class="profile-avatar-placeholder">D</div>
+        <div class="profile-meta">
+          <h2>Daniel Vance</h2>
+          <p><strong>Roll Number:</strong> WT-2026-001</p>
+          <p><span class="badge badge-green">Computer Science & Engineering</span></p>
+        </div>
+      </div>
+
+      <div class="profile-body">
+        <div class="detail-grid">
+          <div class="detail-item">
+            <div class="detail-label">Institutional Email</div>
+            <div class="detail-value">daniel.vance@example.edu</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Academic Program</div>
+            <div class="detail-value">Computer Science & Engineering</div>
+          </div>
+        </div>
+
+        <h4 style="margin: 20px 0 10px 0; color: #1e293b; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
+          Stored File Metadata in MySQL
+        </h4>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <div class="detail-label">Profile Image Asset</div>
+            <div class="detail-value">
+              <p><strong>Stored Filename:</strong> <code>sample_avatar_1.png</code></p>
+              <p><strong>MIME Type:</strong> image/png</p>
+              <p><strong>File Size:</strong> 24.5 KB</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Verification Document Asset</div>
+            <div class="detail-value">
+              <p><strong>Stored Filename:</strong> <code>dan_resume.pdf</code></p>
+              <p><strong>MIME Type:</strong> application/pdf</p>
+              <p><strong>File Size:</strong> 104.2 KB</p>
+              <div style="margin-top: 8px;">
+                <span class="btn btn-secondary btn-sm">📥 Download & View Document</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
